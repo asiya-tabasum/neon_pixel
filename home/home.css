@@ -119,15 +119,15 @@ body {
 
 .title p:hover {
     transform: scale(1.05); /* Slightly increase size on hover */
-    color: #fff ;/* Change text color on hover */
+    color: #fff ;/* Changes text color on hover */
     opacity: 1; /* Fully opaque on hover */
 }
 
 .icon-container {
     position: fixed; /* Position the icon absolutely */
-    top: 20px;         /* Adjust top position */
-    left: 20px;        /* Adjust left position */
-    z-index: 1000;       /* Ensure it's above other content */
+    top: 20px;         /*  top position */
+    left: 20px;        /*  left position */
+    z-index: 1000;       /* above other content */
 }
 
 .icon-container i {
@@ -144,7 +144,7 @@ body {
 
 .icon-container i:hover {
     transform: scale(1.2);  /* Slightly increase size on hover */
-    color: #1085f3;         /* Change color to a brighter shade on hover */
+    color: #1085f3;         /* Changes color to a brighter shade on hover */
 }
 
 
@@ -178,7 +178,7 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
-    width: 0; /* Set the width of the sidebar */
+    width: 0; /*  width of the sidebar */
     height: 100vh; /* Full height */
     background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
     color: #ffffff; /* Text color */
@@ -186,13 +186,13 @@ body {
     top: 0; /* Align to top */
     left: -250px; /* Initially hidden off-screen */
     transition: left 0.3s ease; /* Smooth transition for opening */
-    z-index: 999; /* Ensure it appears above other content */
+    z-index: 999; /*  it appears above other content */
     padding: 20px; /* Add padding */
 
 }
 
 .sidebar.active {
-    width: 100%; /* Set the width of the sidebar */
+    width: 100%; /*  width of the sidebar */
     height: 100vh; /* Full height */
     background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
     color: #ffffff; /* Text color */
@@ -200,7 +200,7 @@ body {
     top: 0; /* Align to top */
     left: 0; /* Initially hidden off-screen */
     transition: left 0.3s ease; /* Smooth transition for opening */
-    z-index: 999; /* Ensure it appears above other content */
+    z-index: 999; /* it appears above other content */
     padding: 20px; /* Add padding */
 }
 
@@ -239,7 +239,7 @@ body {
 }
 
 .menu-list {
-    display: flex; /* Use Flexbox for layout */
+    display: flex; /* Flexbox for layout */
     justify-content: center; /* Center items */
     align-items: center; /* Center items vertically */
     margin: 20px; 
@@ -249,8 +249,8 @@ body {
 .menu-item {
     position: relative; /* Position relative for absolute positioning of text */
     border-radius: 10px; 
-    overflow: hidden; /* Ensure text doesn't overflow */
-    flex: 1 1 300px; /* Allow menu items to grow and shrink, minimum size of 150px */
+    overflow: hidden; /* text doesn't overflow */
+    flex: 1 1 300px; /* it Allow menu items to grow and shrink, minimum size of 150px */
     margin-right : 100px;
     margin-left: 100px;
     margin-top: 50px;
@@ -295,7 +295,7 @@ body {
     padding: 0;
 }
 
-/* Optional: Change background color on hover */
+
 .menu-item a:hover {
     font-size: 2.5em;
 
@@ -320,7 +320,7 @@ body {
 }
 
 .auth-links a:hover {
-    transform: scale(1.05); /* Slightly increase size on hover */
+    transform: scale(1.05); /* increases size on hover */
     color: #0a41c2 ;/* Change text color on hover */
     opacity: 1; /* Fully opaque on hover */
 }

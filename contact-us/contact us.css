@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh; /* Full height */
+    position: relative;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute; /* Position video absolutely */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the entire viewport */
+    z-index: -1; /* Send video to back */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 0px;
+    padding: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #fff; /* Heading color */
+    text-shadow: 2px 4px 0 rgba(7, 80, 214, 0.5);
+}
+
+
+
+h3{
+    font-size:1.3rem;
+    margin-top: 40px;
+    margin-right: 6px;
+   
+    text-align: center;
+    color: #fff; /* Heading color */
+    text-shadow: 2px 4px 0 rgba(7, 80, 214, 0.5);
+}
+
+.github-link{
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+}
+
+
+.github-link a{
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-top: 0px;
+    padding-right : 40px;
+    padding-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #fff; /* Heading color */
+    text-shadow: 2px 4px 0 rgba(7, 80, 214, 0.5);
+}
+
+.card-row {
+    display: flex; /* flexbox for alignment */
+    justify-content: space-around;
+    width: 80%; /* Width of the container */
+    height: auto;
+}
+
+
+
+.contact-card {
+    position: relative; /* Required for pseudo-elements */
+    padding: 20px; /* Padding inside the card */
+    border: 3px solid #fff; /* Initial border */
+    border-radius: 30px; /* Rounded corners */
+    
+    color: #fff; /* Change text color to white for better visibility */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    overflow: hidden; /* Ensure text doesn't overflow */
+    height: 180px;
+    width: 400px; /* Set a fixed width for the cards */
+    text-align: center;
+    margin-top : 20px;
+    margin-bottom: 50px;
+    margin-left: 270px;
+    margin-right: 60px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.third-card{
+    display: flex;
+    align-items: center;
+    padding-left: 280px;
+    margin: 0
+}
+
+.contact-card h3,
+.contact-card h4,
+.contact-card p {
+    margin: 5px 0; /* Margin for text */
+}
+
+/* Animation for moving border */
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px; /* Same as card */
+    background-image: linear-gradient(270deg, violet, purple, blue, skyblue);
+    background-size: 400%; /* Size for smooth animation */
+    animation: glowingBorder 5s linear infinite; /* Animation effect */
+    z-index: -1; /* Behind the card */
+}
+
+/* Keyframes for border animation */
+@keyframes glowingBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Hover effect */
+.contact-card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    background-color: rgba(19, 139, 225, 0.5); /* Changes background on hover */
+    box-shadow: 0 0 20px rgba(5, 143, 213, 0.8); /
+}
+
