@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        #p,#q,#r,#s{
+            left:25%;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: white; /* Change text color to white */
+            position: relative;
+            overflow: hidden;
+            text-align:center;
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+        .form-container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        .input-container {
+            position: relative;
+            margin: 25px 0; /* Spacing between input fields */
+            text-align: left; /* Align text to the left */
+        }
+        label {
+            color: white; /* Change label color to white */
+            font-size: 18px; /* Make the font size slightly larger */
+            font-weight: bold; /* Make the labels bold */
+            display: block; /* Ensure labels are displayed on their own line */
+            margin-bottom: 5px; /* Space between label and input */
+            position: absolute; /* Position labels above inputs */
+            left: 0; /* Align labels to the left */
+            top: -20px; /* Position labels at the top */
+            transition: all 0.3s; /* Smooth transition for moving labels */
+        }
+        input, textarea {
+            width: 60%; /* Reduce width of input fields */
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid white; /* Add a bottom border for a cleaner look */
+            background-color: transparent; /* Set background to transparent */
+            color: white; /* Keep input text color white */
+            font-size: 16px;
+            display: block; /* Ensure inputs are displayed as block elements */
+        }
+        input:focus + label, 
+        textarea:focus + label,
+        input:not(:placeholder-shown) + label,
+        textarea:not(:placeholder-shown) + label {
+            transform: translateY(-20px); /* Move label up when focused or filled */
+            font-size: 14px; /* Reduce font size when label moves up */
+            color: rgba(192, 192, 192, 0.7); /* Set color to silver with transparency */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success-message {
+            margin-top: 20px;
+            display: none;
+            color: white; /* Change success message color to white */
+        }
+        h1{
+            font-family:'Times New Roman', Times, serif;
+            font-size:40px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <video src="reachus_video.mp4" muted autoplay loop></video>
+
+    <div class="form-container">
+        <h1>Login</h1>
+        <form id="contactForm">
+            <div class="input-container" id="p">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Name</label>
+            </div>
+            <br>
+
+            
+            <div class="input-container" id="s">
+                <textarea id="message" placeholder=" " required></textarea>
+                <label for="message">College Id</label>
+            </div>
+            <br>
+
+            <div class="input-container" id="q">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+            </div>
+            <br>
+
+            <div class="input-container" id="r">
+                <input type="tel" id="mobile" placeholder=" " required>
+                <label for="mobile">Mobile Number</label>
+                <span id="error-message" style="color: red; display: none;"></span> <!-- For displaying error messages -->
+            </div>
+            <br>
+
+
+            <button type="submit">Submit</button>
+            <br>
+        </form>
+        <div class="success-message" id="successMessage">Submitted successfully!</div>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="../home/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
