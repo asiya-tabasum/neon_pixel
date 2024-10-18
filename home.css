@@ -6,6 +6,7 @@
 
 body {
     perspective: 1000px; /* Creates the 3D perspective for the effect */
+    overflow: hidden;
 }
 
 /* Full-page video container */
@@ -123,10 +124,10 @@ body {
 }
 
 .icon-container {
-    position: absolute; /* Position the icon absolutely */
+    position: fixed; /* Position the icon absolutely */
     top: 20px;         /* Adjust top position */
     left: 20px;        /* Adjust left position */
-    z-index: 2;       /* Ensure it's above other content */
+    z-index: 1000;       /* Ensure it's above other content */
 }
 
 .icon-container i {
@@ -168,11 +169,15 @@ body {
     }
 }
 
-
+/* to hide fixed things when sidebar is open */
+.hidden {
+    opacity: 0; /* Hide the elements */
+    pointer-events: none; /* Prevent clicking when hidden */
+}
 
 /* Sidebar Styles */
 .sidebar {
-    width: 100%; /* Set the width of the sidebar */
+    width: 0; /* Set the width of the sidebar */
     height: 100vh; /* Full height */
     background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
     color: #ffffff; /* Text color */
@@ -182,16 +187,39 @@ body {
     transition: left 0.3s ease; /* Smooth transition for opening */
     z-index: 999; /* Ensure it appears above other content */
     padding: 20px; /* Add padding */
+    overflow: hidden;
 }
 
 .sidebar.active {
-    left: 100px; /* Move into view when active */
+    width: 100%; /* Set the width of the sidebar */
+    height: 100vh; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+    color: #ffffff; /* Text color */
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Initially hidden off-screen */
+    transition: left 0.3s ease; /* Smooth transition for opening */
+    z-index: 999; /* Ensure it appears above other content */
+    padding: 20px; /* Add padding */
 }
+
 
 .sidebar-header {
     display: flex; /* Flexbox for header layout */
     justify-content: space-between; /* Space between title and button */
     align-items: center; /* Center vertically */
+}
+
+.sidebar-header h1{
+    
+   
+        font-size: 4em;
+        font-weight: 800;
+        color: #ffffff;
+        text-shadow: 3px 6px 0 rgba(11, 121, 247, 0.7);
+        overflow: hidden;
+        white-space: nowrap;
+        
 }
 
 .close-btn {
@@ -222,8 +250,16 @@ body {
     border-radius: 10px; 
     overflow: hidden; /* Ensure text doesn't overflow */
     flex: 1 1 300px; /* Allow menu items to grow and shrink, minimum size of 150px */
-    margin: 20px;
+    margin-right : 100px;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+
+
+
 
 
 .menu-item img {
@@ -233,6 +269,7 @@ body {
     object-fit: cover; /* Cover the area */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
     margin: 20px 0;
+    box-shadow: 6px 6px 2px rgba(21, 23, 26, 0.7);
 }
 
 .menu-item:hover img {
@@ -242,30 +279,35 @@ body {
 .menu-item a {
     position: absolute; /* Position text absolutely within the menu item */
     bottom: 10px; /* Position text at the bottom of the image */
-    left: 50%; /* Center the text horizontally */
+    left: 27%; /* Center the text horizontally */
+    top: 45%;
     transform: translateX(-50%); /* Adjust for centering */
     text-decoration: none; /* Remove underline */
-    font-size: 1.2em; /* Adjust font size */
+    font-size: 2em; /* Adjust font size */
     color: #ffffff; /* Text color */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
-    padding: 5px; /* Add some padding around the text */
-    border-radius: 5px; /* Optional: Add rounded corners */
+    font-weight: 800;
+    text-shadow: 3px 4px 0 rgba(11, 121, 247, 0.3);
+    overflow: hidden;
+    white-space: nowrap;
     transition: background-color 0.3s ease; /* Smooth transition for hover */
+    margin: 0;
+    padding: 0;
 }
 
 /* Optional: Change background color on hover */
 .menu-item a:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+    font-size: 2.5em;
+
 }
 
 
 
 /* Login/Register links (Upper right) */
 .auth-links {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 2;
+    z-index: 1000;
 }
 
 .auth-links a {
