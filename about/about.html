@@ -28,7 +28,7 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: -1;
+            z-index: 1;
             transform: translate(-50%, -50%);
         }
 
@@ -52,7 +52,7 @@
         }
 
         /* Hover effect for heading */
-        h1:hover {
+        h1:hover,a:hover{
             filter: brightness(1.5); /* Increases brightness on hover */
             text-shadow: 0px 0px 15px rgba(255, 255, 255, 1); /* Highlight with stronger glow */
         }
@@ -84,6 +84,14 @@
             transform: scale(1.05); /* Slightly enlarge text */
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); /* Add glow effect */
         }
+             
+        a{
+            font-size: 2em;
+            margin: 20px;
+            padding: 20px;
+            margin-top: 10px;
+            color: #fff;
+        }
 
     </style>
 </head>
@@ -91,6 +99,12 @@
 
     <!-- Background video -->
     <video src="about_bg.mp4" muted autoplay loop></video>
+    <div class="icon-container">
+        <i class="fas fa-bars" id="sidebar-icon"></i>
+    </div>
+
+
+   
 
     <!-- Content container with title and text box -->
     <div class="content-container">
@@ -106,8 +120,10 @@
                 This initiative strengthens student-faculty interactions, enhancing both personal and professional growth for students at SLIET, ensuring they receive the guidance they need to succeed.
             </p>
         </div>
-    </div>
 
+        <a href="../home/home.html">return to home</a>
+    </div>
+   
     <script src="../home/script.js"></script>
 </body>
 </html>
