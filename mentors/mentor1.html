@@ -1,0 +1,327 @@
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            z-index: -1;
+        }
+        body {
+            color:black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .outer {
+            width: 1900px;
+            height: 1000px;
+            background-image: url('card1.avif');
+            background-size: cover; /* Ensures the image covers the entire div */
+            background-position: center; /* Centers the background image */
+            border-radius: 30px;
+            border: 3px solid #fff;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            padding:20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            overflow:hidden;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+         
+       
+
+        .details-container {
+            padding: 65px;
+            display: flex; 
+            justify-content: center; /* Center the image initially */
+            align-items: center; 
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        p {
+            color: ghostwhite;
+            font-family: 'Old Standard TT';
+            font-weight: bold;
+            font-size: 70px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
+            animation: pGlow 2s infinite alternate;
+        }
+
+        @keyframes pGlow {
+            0% {
+                text-shadow: 0 0 10px #1e4146, 
+                            0 0 20px #1e4146, 
+                            0 0 30px #1e4146, 
+                            0 0 40px #1e4146;
+            }
+            100% {
+                text-shadow: 0 0 20px #1e4146, 
+                            0 0 30px #1e4146, 
+                            0 0 40px #1e4146, 
+                            0 0 50px #1e4146;
+            }
+        }
+
+
+
+        button {
+            color: white;
+            background-color:#1e4146;
+            width: 250px; 
+            height: 80px;
+            font-size: 40px;
+            cursor: pointer;
+            border: 1px solid #a6dbd0;
+            border-radius: 9px;
+            justify-content: center;
+            align-items: center;
+            margin: 5px auto;
+            box-shadow: 0 8px 20px rgba(76, 120, 126, 0.5), 
+                        0 -8px 20px rgba(76, 120, 126, 0.5), 
+                        8px 0 20px rgba(76, 120, 126, 0.5), 
+                        -8px 0 20px rgba(76, 120, 126, 0.5);
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            transform: scale(1.06);
+        }
+
+        .mentor-image {
+            margin-top: 50px;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            border: 5px solid transparent;
+            animation: borderGlow 2s infinite alternate;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+            transition: transform 0.3s ease; /* Smooth image movement */
+        }
+
+        @keyframes borderGlow {
+            0% {
+                border-color: #00BFFF;
+                box-shadow: 0 0 10px #00BFFF, 0 0 20px #00BFFF;
+            }
+            50% {
+                border-color: #1E90FF;
+                box-shadow: 0 0 15px #1E90FF, 0 0 30px #1E90FF;
+            }
+            100% {
+                border-color: #a89e9e;
+                box-shadow: 0 0 10px #a89e9e, 0 0 20px #a89e9e;
+            }
+        }
+
+
+        .mentor-image:hover {
+            transform: scale(1.1); /* Slightly enlarges image on hover */
+        }
+
+
+        .mentor-details, .mentor-register {
+            color: black;
+            margin-top: 40px;
+            margin-left: 20px; 
+            display: none; /* Hide details initially */
+            transition: opacity 0.3s ease; /* Smooth transition for visibility */
+        }
+
+
+        li {
+            font-size: 40px;
+            margin-left: 5px;
+        }
+        ul {
+            padding-left: 0;
+            text-align: left;
+        }
+        ul.custom-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.custom-bullets li {
+            position: relative;
+            padding-left: 55px;
+        }
+
+        ul.custom-bullets li::before {
+            content: "➢";
+            position: absolute;
+            left: 10px;
+            font-size: 40px;
+            line-height: 1;
+        }
+
+
+        .outer:hover {
+            transform: scale(1.05); /* Slightly increase size on hover */
+            background-color: rgba(19, 139, 225, 0.5); /* Change background on hover */
+            box-shadow: 0 0 20px rgba(5, 143, 213, 0.8); /
+        }
+
+         /* Heading style */
+         h2 {
+            font-size: 60px;
+            margin-bottom: 25px;
+        }
+
+        /* Timeslots on the right side */
+        .timeslots {
+            display: flex;
+            flex-direction: column;
+            margin-left: 35px;
+        }
+
+        /* Individual timeslot buttons */
+        .timeslot {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #94c0c0;
+            border: none;
+            border-radius: 8px;
+            font-size: 40px;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* Booked timeslot */
+        .booked {
+            background-color: #607c7c;
+            cursor: not-allowed;
+        }
+
+        /* Text under booked slot */
+        .booked-text {
+            font-size: 30px;
+            color: red;
+            margin-top: -20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <video src="video.mp4" muted autoplay loop playsinline preload="auto"></video>
+    <div class="outer">
+        <p>Dr. Preetpal Kaur Buttar</p>
+        <div class="details-container">
+            <img src="Dr._Preetpal_Kaur_Buttar.jpg" alt="Mentor Image" class="mentor-image">
+            <div class="mentor-details">
+                <ul class="custom-bullets">
+                    <li> <b>Designationm : </b>Assistant  Professor</li>
+                    <li> <b>Educational Qualification : </b>   PhD (Computer Science & Engineering)</li>
+                    <li> <b>Experience : </b> Assistant Professor at Lovely Professional University, Jalandhar from January 06, 2014 to July 17, 2014
+
+                        <br>Assistant Professor (on contract basis) at Sant Longowal Institute of Engg. and Technology, Longowal (Sangrur) from July 18, 2014 to June 30, 2015
+                        
+                        <br>Assistant Professor (on contract basis) at Sant Longowal Institute of Engg. and Technology, Longowal (Sangrur) from July 20, 2015 to Nov 02, 2015</li>
+                    <li> <b>Email : </b> preetpal@sliet.ac.in</li>
+                </ul>
+            </div>
+            <div class="mentor-register">
+                <h2>Time Slots</h2>
+
+                <!-- Timeslots -->
+                <div class="timeslots">
+                    <!-- First timeslot (already booked) -->
+                    <div class="timeslot booked" id="timeslot-1">
+                        9am
+                    </div>
+                    <div class="booked-text">Booked</div>
+
+                    <!-- Remaining timeslots -->
+                    <div class="timeslot" id="timeslot-2" onclick="bookSlot('timeslot-2', '1pm')">
+                        1pm
+                    </div>
+                    <div class="timeslot" id="timeslot-3" onclick="bookSlot('timeslot-3', '11pm')">
+                        11pm
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <button id="detailsBtn">Details</button>
+            <button id="registerBtn">Register</button>
+        </div>
+    </div>
+    
+    <script>
+        const detailsBtn = document.getElementById('detailsBtn');
+        const registerBtn = document.getElementById('registerBtn');
+        const mentorDetails = document.querySelector('.mentor-details');
+        const registerMessage = document.querySelector('.mentor-register');
+    
+        // Generic toggle function
+        function toggleVisibility(element) {
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+                setTimeout(() => {
+                    element.style.opacity = "1"; // Change opacity after displaying
+                }, 10); // A slight delay to allow display change
+            } else {
+                element.style.opacity = "0";
+                setTimeout(() => {
+                    element.style.display = "none"; 
+                }, 300); // Match this timeout with the transition duration
+            }
+        }
+    
+        detailsBtn.addEventListener('click', () => {
+            toggleVisibility(mentorDetails);
+        });
+    
+        registerBtn.addEventListener('click', () => {
+            toggleVisibility(registerMessage);
+        });
+    </script>
+
+
+    <script>
+        // Function to handle timeslot booking
+        function bookSlot(id, time) {
+            // Get the clicked timeslot
+            var timeslot = document.getElementById(id);
+
+            // Change its appearance to 'booked'
+            timeslot.classList.add('booked');
+            timeslot.innerHTML = time;  // Update the content (if necessary)
+
+            // Add 'Booked' text below the slot
+            var bookedText = document.createElement('div');
+            bookedText.classList.add('booked-text');
+            bookedText.textContent = 'Booked';
+            timeslot.parentNode.insertBefore(bookedText, timeslot.nextSibling);
+
+            // Show success message
+            alert('The timeslot at ' + time + ' has been successfully booked.');
+        }
+    </script>
+        
+        
+</body>
+</html>
