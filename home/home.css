@@ -6,7 +6,7 @@
 
 body {
     perspective: 1000px; /* Creates the 3D perspective for the effect */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Full-page video container */
@@ -14,7 +14,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Video settings */
@@ -46,7 +46,7 @@ body {
     font-weight: 800;
     color: #ffffff;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+    /* overflow: hidden; */
     white-space: nowrap;
     animation: glitch 1s infinite;
 }
@@ -66,7 +66,7 @@ body {
     left: 0;
     top: 0;
     color: #fff; 
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease; /* Smooth transition */
@@ -249,13 +249,16 @@ body {
 .menu-item {
     position: relative; /* Position relative for absolute positioning of text */
     border-radius: 10px; 
-    overflow: hidden; /* text doesn't overflow */
+    /* overflow: hidden; text doesn't overflow */
     flex: 1 1 300px; /* it Allow menu items to grow and shrink, minimum size of 150px */
     margin-right : 100px;
     margin-left: 100px;
     margin-top: 50px;
     margin-bottom: 50px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -278,21 +281,18 @@ body {
 }
 
 .menu-item a {
-    position: absolute; /* Position text absolutely within the menu item */
-    bottom: 10px; /* Position text at the bottom of the image */
-    left: 27%; /* Center the text horizontally */
-    top: 45%;
-    transform: translateX(-50%); /* Adjust for centering */
     text-decoration: none; /* Remove underline */
     font-size: 2em; /* Adjust font size */
     color: #ffffff; /* Text color */
-    font-weight: 800;
+    font-weight: 800; /* Bold text */
     text-shadow: 3px 4px 0 rgba(11, 121, 247, 0.3);
-    overflow: hidden;
-    white-space: nowrap;
+    /* Prevent overflow */
+    white-space: nowrap; /* Prevent line breaks */
     transition: background-color 0.3s ease; /* Smooth transition for hover */
-    margin: 0;
-    padding: 0;
+    text-align: center; /* Center text horizontally */
+    margin-top: 10px; /* Space between image and text */
+    position: absolute;
+    top: 40%;
 }
 
 
